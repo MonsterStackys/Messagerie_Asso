@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.messagerie.g2.client.ChatController">
+    <left>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #eeeeee;">
+            <Label text="Membres" style="-fx-font-weight: bold;"/>
+            <ListView fx:id="userListView" prefWidth="150.0" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" VBox.vgrow="ALWAYS">
+                <VBox fx:id="messageContainer" spacing="5" />
+            </ScrollPane>
+            <HBox spacing="10">
+                <TextField fx:id="messageField" promptText="Écrivez votre message..." HBox.hgrow="ALWAYS" />
+                <Button text="Envoyer" onAction="#handleSendMessage" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
